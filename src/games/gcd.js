@@ -15,8 +15,8 @@ const gcd = (a, b) => {
 };
 
 const gcdGameQuestionGenerator = () => {
-  const a = randInt(maxNum);
-  const b = randInt(maxNum);
+  const a = randInt(0, maxNum);
+  const b = randInt(0, maxNum);
   const question = `${a} ${b}`;
   const correctAnswer = gcd(a, b);
   return cons(question, correctAnswer.toString());

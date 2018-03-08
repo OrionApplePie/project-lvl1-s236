@@ -3,7 +3,7 @@ import { car, cdr } from 'hexlet-pairs';
 
 const defaultRounds = 3;
 
-const randInt = max => Math.floor(Math.random() * Math.floor(max));
+const randInt = (min, max) => Math.floor((Math.random() * ((max - min) + 1)) + min);
 
 const conversation = (rules) => {
   console.log('Welcome to Brain Games!');

@@ -2,6 +2,7 @@ import { cons } from 'hexlet-pairs';
 import { commonFlow, randInt } from '..';
 
 const rules = 'Balance the given number.';
+const minNum = 100;
 const maxNum = 9999;
 
 const getMaxDigit = (num) => {
@@ -54,7 +55,7 @@ const getBalanced = (num) => {
 };
 
 const balanceGameQuestionGenerator = () => {
-  const num = randInt(maxNum);
+  const num = randInt(minNum, maxNum);
   const correctAnswer = getBalanced(num);
   return cons(num, correctAnswer.toString());
 };

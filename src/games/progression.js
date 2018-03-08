@@ -3,12 +3,13 @@ import { commonFlow, randInt } from '..';
 
 const rules = 'What number is missing in this progression?';
 const maxProgressionLen = 10;
+const minNum = 0;
 const maxNum = 50;
 
 const progressionGameQuestionGenerator = () => {
-  const firstMember = randInt(maxNum);
-  const difference = randInt(maxNum);
-  const hidenMemberNumber = randInt(maxProgressionLen);
+  const firstMember = randInt(minNum, maxNum);
+  const difference = randInt(minNum, maxNum);
+  const hidenMemberNumber = randInt(1, maxProgressionLen);
 
   let ap = '';
   let nextMember;

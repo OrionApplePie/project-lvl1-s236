@@ -1,6 +1,6 @@
 {
   "name": "orion-brain-games",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Funny Logical Game",
   "main": "index.js",
   "bin": {

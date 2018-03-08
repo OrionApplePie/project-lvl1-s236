@@ -1,11 +1,9 @@
 import { cons } from 'hexlet-pairs';
-import { commonFlow } from '..';
+import { commonFlow, randInt } from '..';
 
 const MAX_NUM = 100;
 const QUESTION_COUNT = 3;
 const RULES_STR = 'Answer "yes" if number even otherwise answer "no".';
-
-const randInt = max => Math.floor(Math.random() * Math.floor(max));
 
 const evenGameQuestionGenerator = () => {
   const num = randInt(MAX_NUM);

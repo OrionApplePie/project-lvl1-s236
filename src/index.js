@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
+const randInt = max => Math.floor(Math.random() * Math.floor(max));
+
 const conversation = (rules) => {
   console.log('Welcome to Brain Games!');
   if (rules) {
@@ -35,4 +37,4 @@ const commonFlow = (rules, questionCount, questionGenerator) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export { conversation, commonFlow };
+export { conversation, randInt, commonFlow };

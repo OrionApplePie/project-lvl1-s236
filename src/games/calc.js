@@ -1,11 +1,11 @@
 import { cons } from 'hexlet-pairs';
 import { commonFlow, randInt } from '..';
 
-const QUESTION_COUNT = 3;
 const RULES_STR = 'What is the result of the expression?';
-const OPERATIONS = '+-*';
+const QUESTION_COUNT = 3;
 const MAX_NUM = 100;
 const MAX_LEN = 3;
+const OPERATIONS = '+-*';
 
 const getCorrectAnswer = (a, b, op) => {
   switch (op) {

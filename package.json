@@ -1,6 +1,6 @@
 {
   "name": "orion-brain-games",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Funny Logical Game",
   "main": "index.js",
   "bin": {
@@ -30,6 +30,7 @@
     "eslint-plugin-import": "^2.9.0"
   },
   "dependencies": {
-    "readline-sync": "^1.4.9"
+    "readline-sync": "^1.4.9",
+    "hexlet-pairs": "^1.0.5"
   }
 }

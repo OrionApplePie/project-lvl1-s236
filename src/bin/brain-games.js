@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-import conversation from '..';
+import { conversation } from '..';
 
 conversation();

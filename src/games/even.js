@@ -1,11 +1,15 @@
 import readlineSync from 'readline-sync';
+import conversation from '..';
 
 const MAX_NUM = 100;
 const QUESTION_COUNT = 3;
+const RULES_STR = 'Answer "yes" if number even otherwise answer "no".';
 
 const randInt = max => Math.floor(Math.random() * Math.floor(max));
 
-export default (userName) => {
+export default () => {
+  const userName = conversation(RULES_STR);
+
   for (let i = 0; i < QUESTION_COUNT; i += 1) {
     const num = randInt(MAX_NUM);
     const correctAnswer = num % 2 === 0 ? 'yes' : 'no';

@@ -1,11 +1,10 @@
 import { cons } from 'hexlet-pairs';
 import { commonFlow, randInt } from '..';
 
-const RULES_STR = 'What is the result of the expression?';
-const QUESTION_COUNT = 3;
-const MAX_NUM = 100;
-const MAX_LEN = 3;
-const OPERATIONS = '+-*';
+const rules = 'What is the result of the expression?';
+const maxNum = 100;
+const maxLen = 3;
+const operations = '+-*';
 
 const getCorrectAnswer = (a, b, op) => {
   switch (op) {
@@ -16,17 +15,17 @@ const getCorrectAnswer = (a, b, op) => {
     case '*':
       return a * b;
     default:
-      return undefined;
+      return NaN;
   }
 };
 
 const calcGameQuestionGenerator = () => {
-  const a = randInt(MAX_NUM);
-  const b = randInt(MAX_NUM);
-  const op = OPERATIONS[randInt(MAX_LEN)];
+  const a = randInt(maxNum);
+  const b = randInt(maxNum);
+  const op = operations[randInt(maxLen)];
   const expression = `${a} ${op} ${b}`;
   const correctAnswer = getCorrectAnswer(a, b, op);
   return cons(expression, correctAnswer.toString());
 };
 
-export default () => commonFlow(RULES_STR, QUESTION_COUNT, calcGameQuestionGenerator);
+export default () => commonFlow(rules, calcGameQuestionGenerator);

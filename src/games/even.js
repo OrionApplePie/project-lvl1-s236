@@ -1,14 +1,13 @@
 import { cons } from 'hexlet-pairs';
 import { commonFlow, randInt } from '..';
 
-const RULES_STR = 'Answer "yes" if number even otherwise answer "no".';
-const QUESTION_COUNT = 3;
-const MAX_NUM = 100;
+const rules = 'Answer "yes" if number even otherwise answer "no".';
+const maxNum = 100;
 
 const evenGameQuestionGenerator = () => {
-  const num = randInt(MAX_NUM);
+  const num = randInt(maxNum);
   const correctAnswer = num % 2 === 0 ? 'yes' : 'no';
   return cons(num, correctAnswer);
 };
 
-export default () => commonFlow(RULES_STR, QUESTION_COUNT, evenGameQuestionGenerator);
+export default () => commonFlow(rules, evenGameQuestionGenerator);

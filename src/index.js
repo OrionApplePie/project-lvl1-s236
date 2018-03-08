@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
+const defaultRounds = 3;
+
 const randInt = max => Math.floor(Math.random() * Math.floor(max));
 
 const conversation = (rules) => {
@@ -16,10 +18,10 @@ const conversation = (rules) => {
   return userName;
 };
 
-const commonFlow = (rules, questionCount, questionGenerator) => {
+const commonFlow = (rules, questionGenerator) => {
   const userName = conversation(rules);
 
-  for (let i = 0; i < questionCount; i += 1) {
+  for (let i = 0; i < defaultRounds; i += 1) {
     const questionPair = questionGenerator();
     const question = car(questionPair);
     const correctAnswer = cdr(questionPair);

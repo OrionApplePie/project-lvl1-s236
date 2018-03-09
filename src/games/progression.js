@@ -6,25 +6,21 @@ const maxProgressionLen = 10;
 const minNum = 0;
 const maxNum = 50;
 
-const progressionGameQuestionGenerator = () => {
-  const firstMember = randInt(minNum, maxNum);
-  const difference = randInt(minNum, maxNum);
-  const hidenMemberNumber = randInt(1, maxProgressionLen);
+const getMemberOfAP = (first, diff, n) => first + ((n - 1) * diff);
 
-  let ap = '';
-  let nextMember;
-  let correctAnswer;
-
-  for (let i = 1; i <= maxProgressionLen; i += 1) {
-    if (i === hidenMemberNumber) {
-      nextMember = '..';
-      correctAnswer = firstMember + ((i - 1) * difference);
-    } else {
-      nextMember = firstMember + ((i - 1) * difference);
+const apGemeQuestionGenerator = () => {
+  const first = randInt(minNum, maxNum);
+  const diff = randInt(minNum, maxNum);
+  const hiddenMemberNumber = randInt(1, maxProgressionLen);
+  let next;
+  const iter = (counter, acc) => {
+    if (counter === maxProgressionLen + 1) {
+      return acc;
     }
-    ap = `${ap} ${nextMember}`;
-  }
-  return cons(ap, correctAnswer.toString());
+    next = counter === hiddenMemberNumber ? '..' : getMemberOfAP(first, diff, counter);
+    return iter(counter + 1, `${acc} ${next}`);
+  };
+  return cons(iter(1, ''), getMemberOfAP(first, diff, hiddenMemberNumber).toString());
 };
 
-export default () => commonFlow(rules, progressionGameQuestionGenerator);
+export default () => commonFlow(rules, apGemeQuestionGenerator);
